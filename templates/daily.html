@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+    <header class="masthead" style="background-image:url('{% static 'assets/img/about-bg.jpg' %}');">
+        <div class="overlay" style="height: 350.4px;"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="site-heading" style="height: 80.4px;">
+                        <h1>Daily Report</h1><span class="subheading">Give brief of what you do daily.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <section class="contact-clean" style="border-right-color: #505e6c;background: transparent;">
+            <form method="post" style="width: 483px;">
+                {% csrf_token %}
+                 
+                <div class="mb-3">
+                    <input class="form-control is-invalid" type="number" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" name="working_hours" placeholder="Working Hours" style="border-color: rgb(189,193,197);border-top-color: rgb(206,212,218);border-right-color: rgb(206,212,218);border-bottom-color: rgb(206,212,218);border-left-color: rgb(206,212,218);border-radius: 25px;" required="" title="How long you work today">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" name="activity" placeholder="Activities" rows="14" style="border-right-color: rgb(206, 212, 218);border-radius: 24px;height: 110px;" spellcheck="true" required="" title="Give short explanation of what you did."></textarea>
+                </div> 
+                
+                <div class="text-center mb-3">
+                    <input class="btn btn-primary" type="submit" value="submit" style="border-radius: 51px;">
+                </div> 
+            </form>
+        </section>
+    </div>
+{% endblock main %}

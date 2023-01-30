@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="container">
+        <section class="login-clean" style="background: transparent;">
+            <form method="post" action="">
+                {% csrf_token %}
+                <h2 class="visually-hidden">Login Form</h2>
+                <div class="illustration" style="padding-bottom: -9px;">
+                    <h1 style="color: var(--bs-gray-900);margin-bottom: -14px;">OLSP</h1><i class="icon ion-ios-book-outline" style="color: #72818f;"></i>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" name="username" placeholder="Username" style="border-radius: 16px;">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="password" name="password" placeholder="Password" style="border-radius: 15px;">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Log In" class="btn btn-primary d-block w-100" style="background: #7ea0bf;border-radius: 37px;">
+                </div>
+                <a class="forgot" href="#">Forgot your email or password?</a>
+                <a class="forgot" href="" style="margin: 0px;padding: 5px;">OR</a>
+                <a class="btn btn-primary d-block w-100" role="button" href="{% url 'student_signup' %}" style="background: #81a1be;border-radius:37px;margin: 25px 0px -24px;padding: 11px;margin-top: 4px;">REGISTER</a>
+            </form>
+        </section>
+    </div>
+    <hr>
+{% endblock main %}

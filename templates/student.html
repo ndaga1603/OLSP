@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block main %}
+    <section class="features-boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="background: white;">
+                    <h2 class="text-center" style="background: transparent;max-width: 100%;min-width: 100%;">ONLINE LOGBOOK</h2>
+                </div>
+            </div>
+            <div class="row" style="text-align: center;width: auto;height: auto;">
+                <div class="col-md-4">
+                    <div class="card" style="background: transparent;border-width: 0px;">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="far fa-calendar-alt"></i></h4>
+                            <h6 class="text-muted card-subtitle mb-2">1/56 Days</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="background: transparent;border-width: 0px;">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="far fa-check-circle"></i></h4>
+                            <h6 class="text-muted card-subtitle mb-2">{{ total }} Report&nbsp;</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="border-radius: 0px;background: transparent;border-width: 0px;">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="far fa-comment-dots"></i></h4>
+                            <h6 class="text-muted card-subtitle mb-2">3 Comments</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro"></div>
+            <div class="row justify-content-center features">
+                <div class="col-sm-6 col-md-5 col-lg-3 item">
+                    <div class="box" style="border-radius: 14px;background: rgba(255,255,255,0.42);"><i class="fa fa-pencil-square-o icon" style="color: rgb(121,124,128);"></i>
+                        <h3 class="name">Dairy Report</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+                        <a class="learn-more" href="{% url 'daily' %}">Write a report»</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 item">
+                    <div class="box" style="border-radius: 14px;background: rgba(255,255,255,0.42);"><i class="fa fa-book icon" style="color: rgb(148,159,169);"></i>
+                        <h3 class="name">Weekly Report</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+                        <a class="learn-more" href="{% url 'weekly' %}">Write a report»</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 item">
+                    <div class="box" style="border-radius: 14px;background: rgba(255,255,255,0.42);"><i class="far fa-paper-plane icon" style="color: rgb(142,154,164);"></i>
+                        <h3 class="name">Recommendation</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+                        <a class="learn-more" href="{% url 'recommendation' %}">Give suggestion»</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 item">
+                    <div class="box" style="border-radius: 14px;background: rgba(255,255,255,0.42);"><i class="fa fa-book icon" style="color: rgb(148,159,169);"></i>
+                        <h3 class="name">arival Note</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+                        <a class="learn-more" href="{% url 'arivalnote' %}">Write arival note»</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="highlight-phone">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="intro">
+                        <h2>Supervisor Note</h2>
+                        <p>well done.</p><a class="btn btn-primary" role="button" href="#" style="border-radius: 39px;filter: blur(0px);background: rgb(131,145,166);">Mark as noted</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <!-- <div class="d-none d-md-block phone-mockup"><img class="device" src="assets/img/phone.svg"> -->
+                        <div class="screen"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock main %}

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Online Logbook Submission Portal</title>
+    <meta property="og:image" content="assets/img/home-bg.jpg">
+    <meta name="description" content="The easy and efficient way of managing students activities and making followup during their IPT senssions.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Contact-Form-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Features-Boxed.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Highlight-Phone.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/Login-Form-Clean.css' %}">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="{% static 'assets/css/Team-Boxed.css' %}">
+</head>
+
+<body>
+     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">OLSP</a>
+            <a class="btn btn-success btn-sm" role="button" style="background: transparent;border-radius: 24px;color: var(--bs-gray-900);border-top-color: var(--bs-gray-900);border-right-color: var(--bs-gray-900);border-bottom-color: var(--bs-gray-900);border-left-color: var(--bs-gray-900);" href="{% url 'logout' %}">LOGOUT</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#navbarResponsive"><i class="fa fa-bars"></i></button>
+        </div>
+    </nav>
+   {% block main %}{% endblock main %}
+  
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="{% static 'assets/js/clean-blog.js' %}"></script>
+</body>
+
+</html>

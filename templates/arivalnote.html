@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    <header class="masthead" style="background-image:url('{% static 'assets/img/about-bg.jpg' %}');">
+        <div class="overlay" style="height: 350.4px;"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="site-heading" style="height: 80.4px;">
+                        <h1>Arival Note</h1><span class="subheading">Give brief about your Organization.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <section class="contact-clean" style="border-right-color: #505e6c;background: transparent;">
+            <form method="post" style="width: 483px;">
+                <div class="mb-3"><input class="form-control" type="text" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" name="location" placeholder="location" style="border-radius: 24px;" required="" title="What is your location"></div>
+                <div class="mb-3"><input class="form-control is-invalid" type="email" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" name="Organization detail" placeholder="Organization detail" style="border-color: rgb(189,193,197);border-top-color: rgb(206,212,218);border-right-color: rgb(206,212,218);border-bottom-color: rgb(206,212,218);border-left-color: rgb(206,212,218);border-radius: 25px;" required="" title="details about your working place"></div>
+                <div class="text-center mb-3"><a href="index.html" button class="btn btn-primary" type="submit" style="border-radius: 51px;">submit</button></a></div>
+            </form>
+        </section>
+    </div>
+{% endblock main %}

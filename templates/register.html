@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container">
+    <section class="register-photo">
+        <div class="form-container">
+            <form method="post">
+                <h2 class="text-center">OLSP</h2>
+                 {% csrf_token %}
+
+                <div class="mb-3">
+                    <input class="form-control" name="username" placeholder="UserName" style="border-radius: 16px;border-bottom-width: 0px;">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" name="registration_number" placeholder="Registration Number" style="border-radius: 16px;border-bottom-width: 0px;">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="password" name="password1" placeholder="Password" style="border-radius: 16px;border-bottom-width: 0px;">
+                </div>
+                 <div class="mb-3">
+                    <input class="form-control" type="password" name="password2" placeholder="Password(repeat)" style="border-radius: 16px;border-bottom-width: 0px;">
+                </div>
+               
+                <input type="submit" value="Sign Up" class="btn btn-primary d-block w-100" data-bss-hover-animate="pulse" style="background: #7ea0bf;border-radius: 37px">
+            </form>
+        </div>
+    </section>
+</div>
+{% endblock main %}

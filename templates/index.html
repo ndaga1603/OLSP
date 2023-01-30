@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="{% url 'index' %}">OLSP</a>
+            <a class="btn btn-success btn-sm" role="button" style="background : #7ea0bf;border-radius: 24px;color: var(--bs-gray-900);border-top: 34px;color: var(--bs-gray-900); filter: blur(0px) brightness(194%) contrast(200%) saturate(100%);border-right-color: var(--bs-gray-900);border-bottom-color: var(--bs-gray-900);border-left-color: var(--bs-gray-900);" href="{% url 'student_signup' %}">register</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#navbarResponsive"><i class="fa fa-bars"></i></button>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('{% static 'assets/img/home-bg.jpg' %}');">
+        <div class="overlay" style="height: 100vh;"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="swing animated site-heading" style="margin: 0px;margin-top: 0px;height: 100vh;">
+                        <h1>ONLINE LOGBOOK&nbsp;</h1><span class="subheading">Manage and submit your logbook online</span>
+                        <a href="{% url 'login' %}">
+                            <button class="btn btn-primary btn-sm bg-secondary border rounded-pill border-secondary" data-bss-hover-animate="rubberBand" type="button" style="margin-top: 34px;color: var(--bs-gray-900);filter: blur(0px) brightness(194%) contrast(200%) saturate(100%);opacity: 1;transform: rotateX(0deg);">login</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+{% endblock main %}
