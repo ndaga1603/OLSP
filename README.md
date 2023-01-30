@@ -1,3 +1,3 @@
-# Online Logbook Submissin Portal - OLSP
+# Online Logbook Submission Portal - OLSP
 
 ## 
