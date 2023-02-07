@@ -22,6 +22,8 @@ class SupervisorRequiredMixin(UserPassesTestMixin):
     def test_func(self):
         return self.request.user.is_supervisor
     
+  
+    
 
 class StudentSignUpView(CreateView):
     model = User
@@ -66,7 +68,16 @@ class SupervisorView(LoginRequiredMixin, SupervisorRequiredMixin, TemplateView):
     template_name = 'supervisor.html'
     login_url = '/login/'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        student = Student.objects.all().count()
+        weekly = WeeklyReport.objects.all().count()
+        daily = DailyReport.objects.all().count()
+        reports = weekly + daily
 
+        context["students"] = student
+        context["reports"] = reports
+        return context
 
 class WeeklyReportView(TemplateView):
     template_name = 'weekly-report.html'
@@ -90,21 +101,47 @@ class CreateDailyReport(StudentRequiredMixin, LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class CreateWeeklyReport(TemplateView):
+class CreateWeeklyReport(StudentRequiredMixin, LoginRequiredMixin, CreateView):
     template_name = "weekly.html"
+    form_class = WeeklyReportForm
+    login_url = '/login/'
+    success_url = reverse_lazy('student')
+
+    def form_valid(self, form):
+        user = self.request.user
+        if user.is_student:
+            form.instance.student = user.student
+        return super().form_valid(form)
+    
+
+class ArrivalNote(StudentRequiredMixin, LoginRequiredMixin, CreateView):
+    template_name = "arivalnote.html"
+    form_class = ArrivalNoteForm
+    login_url = '/login/'
+    success_url = reverse_lazy('student')
+
+    def form_valid(self, form):
+        user = self.request.user
+        if user.is_student:
+            form.instance.student = user.student
+        return super().form_valid(form)
 
 
-class ArivalNoteView(TemplateView):
+class ArrivalNoteView(TemplateView):
     template_name = "arival-note.html"
 
 
-class CreateArivalNote(TemplateView):
-    template_name = "arivalnote.html"
-
-
-class CreateRecommendation(TemplateView):
+class CreateRecommendation(StudentRequiredMixin, LoginRequiredMixin, CreateView):
     template_name = "recommendation.html"
+    form_class = RecommandationForm
+    login_url = '/login/'
+    success_url = reverse_lazy('student')
 
+    def form_valid(self, form):
+        user = self.request.user
+        if user.is_student:
+            form.instance.student = user.student
+        return super().form_valid(form)
 
 class UserLoginView(LoginView):
     template_name = 'login.html'

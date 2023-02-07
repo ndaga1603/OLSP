@@ -1,6 +1,6 @@
 from django.urls import path, include
 from .views import *
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LogoutView
 
 
 urlpatterns = [
@@ -11,14 +11,14 @@ urlpatterns = [
     path('', Homepage.as_view(), name="index"),
     path('create-daily-report/', CreateDailyReport.as_view(), name="daily"),
     path('create-weekly-report/', CreateWeeklyReport.as_view(), name="weekly"),
-    path('create-arival-note/', CreateArivalNote.as_view(), name="arivalnote"),
+    # path('create-arival-note/', CreateArivalNote.as_view(), name="arivalnote"),
     path('create-recommendation/', CreateRecommendation.as_view(), name="recommendation"),
 
     path('student/', StudentView.as_view(), name="student"),
     path('supervisor/', SupervisorView.as_view(), name="supervisor"),
     path('weeklyreport/', WeeklyReportView.as_view(), name="weeklyreport"),
     path('dailyreport/', DailyReportView.as_view(), name="dailyreport"),
-    path('arival-note/', ArivalNoteView.as_view(), name="arival_note"),
+    path('arival-note/', ArrivalNote.as_view(), name="arival_note"),
 
     # Registration views
     path('signup/student/', StudentSignUpView.as_view(), name='student_signup'),

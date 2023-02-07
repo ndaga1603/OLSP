@@ -1,6 +1,6 @@
 
 .contact-clean {
-  background: #f1f7fc;
+  /* background: #f1f7fc; */
   padding: 80px 0;
 }
 
@@ -11,14 +11,13 @@
 }
 
 .contact-clean form {
-  max-width: 480px;
-  width: 90%;
+  max-width: 720px;
   margin: 0 auto;
   background-color: #ffffff;
   padding: 40px;
-  border-radius: 4px;
+  border-radius: 20px;
   color: #505e6c;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 1px 5px 5px rgba(31, 34, 129, 0.446);
 }
 
 @media (max-width:767px) {
@@ -36,8 +35,8 @@
 }
 
 .contact-clean form .form-control {
-  background: #fff;
-  border-radius: 2px;
+  background: rgba(128, 144, 183, 0.083);
+  border-radius: 16px;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
   outline: none;
   color: inherit;

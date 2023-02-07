@@ -17,9 +17,14 @@
     <div class="container-fluid">
         <section class="contact-clean" style="border-right-color: #505e6c;background: transparent;">
             <form method="post" style="max-width: 615px;">
-                <div class="mb-3"></div>
-                <div class="mb-3"><textarea class="form-control" data-bss-hover-animate="bounce" name="recommendation" placeholder="your suggestion»" rows="16" style="border-right-color: rgb(206, 212, 218);border-radius: 24px;height: 150px;"></textarea></div>
-                <div class="text-center mb-3"><a href="student.html"button class="btn btn-primary" data-bss-hover-animate="pulse" type="submit" style="border-radius: 51px;margin-top: 24px;">submit</button></a></div>
+                {% csrf_token %}
+           
+                <div class="mb-3">
+                    <textarea class="form-control" data-bss-hover-animate="bounce" name="text" placeholder="your suggestion»" rows="16" style="border-right-color: rgb(206, 212, 218);border-radius: 24px;height: 150px;"></textarea>
+                </div>
+                <div class="text-center mb-3">
+                    <button class="btn btn-primary" data-bss-hover-animate="pulse" type="submit" style="border-radius: 51px;margin-top: 24px;">submit</button>
+                </div>
             </form>
         </section>
     </div>
